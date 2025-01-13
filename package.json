@@ -1,0 +1,16 @@
+{
+  "name": "level_up_project",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd services/frontend && npm run dev",
+    "tracking": "cd services/tracking-service && npm run start:dev",
+    "file-processing": "cd services/file-processing-service && npm run start:dev",
+    "api-gateway": "cd services/api-gateway && npm run start:dev",
+    "dev": "concurrently \"npm run frontend\" \"npm run tracking\" \"npm run file-processing\" \"npm run api-gateway\"",
+    "install-all": "npm install && cd services/frontend && npm install && cd ../tracking-service && npm install && cd ../file-processing-service && npm install && cd ../api-gateway && npm install",
+    "build-all": "cd services/frontend && npm run build && cd ../tracking-service && npm run build && cd ../file-processing-service && npm run build && cd ../api-gateway && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
